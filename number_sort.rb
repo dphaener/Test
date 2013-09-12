@@ -6,36 +6,27 @@ class NumberSort
   end
   
   def sort_array
-    $i = 0
-    $j = 0
     sort_count = []
-    
-    while $i < @int_array.length do
-      $counter = 0
-      $j = 0
-      while $j < @int_array.length do
-        if @int_array[$i] < @int_array[$j]
-          $counter += 1
-        end
-        $j += 1
-      end
-      sort_count.push(@int_array.length - $counter)
-      $i += 1
-    end
-    $i = 0
-    $j = 0
     new_array = []
     
-    while $i < @int_array.length do
-      $j = 0
-      while $j < @int_array.length do
-        if $i == sort_count[$j] - 1
-          new_array.push(@int_array[$j])
+    @int_array.each do |n|
+      counter = 0
+      @int_array.each do |o|
+        if n < o
+          counter += 1
         end
-      $j += 1
       end
-      $i += 1
+      sort_count.push(@int_array.length - counter - 1)
+    end
+
+    sort_count.each_index do |i|
+      sort_count.each do |n|
+        if i == n
+          new_array.push(@int_array[sort_count.index(n)])
+        end
+      end
     end
     new_array
   end
+  
 end
