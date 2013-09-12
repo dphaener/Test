@@ -8,8 +8,7 @@ class CharRemove
   def remove_j
     new_array = []
     @char_array.each do |c|
-      if c == "j"
-      else
+      if c != "j"
         new_array.push(c)
       end
     end
