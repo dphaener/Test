@@ -12,9 +12,7 @@ class NumberSort
     @int_array.each do |n|
       counter = 0
       @int_array.each do |o|
-        if n < o
-          counter += 1
-        end
+        counter += 1 if n < o
       end
       sort_count.push(@int_array.length - counter - 1)
     end
