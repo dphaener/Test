@@ -12,10 +12,8 @@ class StringOut
     
     @str_array.each do
       j = 0
-      while j<i
-        if output != ''
-          output << ','
-        end
+      while j < i
+        output << ', ' if output != ''
         output << @str_array[j]
         j += 1
       end
